@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Avengercards from "./components/Avengercards";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Navbar from "./components/Navbar";
 import avengers from "./avengers.json";
 
 class App extends Component {
@@ -20,18 +21,22 @@ class App extends Component {
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
+      
       <Wrapper>
-        <Title>Avengers</Title>
+        
+        <Title>Avengers Clicky game</Title>
+         <Navbar> </Navbar>
         {this.state.avengers.map(avenger => (
           <Avengercards
-          
+            handleClick={this.handleClick}
             id={avenger.id}
             key={avenger.id}
-            name={avenger.name}
             image={avenger.image}
           />
         ))}
+       
       </Wrapper>
+     
     );
   }
 }

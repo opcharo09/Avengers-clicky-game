@@ -7,9 +7,7 @@ function Avengercards(props) {
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
-      <div className="content">
-      
-      </div>
+      <span className="select" onClick={() => this.props.Handleclick(props.id)}></span>
      
     </div>
   );
