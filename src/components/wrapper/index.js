@@ -1,18 +1,8 @@
 import React from "react";
 import "./style.css";
 
-function AvengerCard(props) {
-  return (
-    <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
-        
-      </div>
-      
-    </div>
-  );
+function Wrapper(props) {
+  return <div className="wrapper">{props.children}</div>;
 }
 
-export default AvengerCard;
+export default Wrapper;

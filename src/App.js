@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-//import FriendCard from "./components/FriendCard";
-//import Wrapper from "./components/Wrapper";
-//import Title from "./components/Title";
+import Avengercards from "./components/Avengercards";
+import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
 import avengers from "./avengers.json";
 
 class App extends Component {
@@ -22,8 +22,8 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Avengers</Title>
-        {this.state.friends.map(avenger => (
-          <AvengerCard
+        {this.state.avengers.map(avenger => (
+          <Avengercards
           
             id={avenger.id}
             key={avenger.id}
