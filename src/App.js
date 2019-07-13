@@ -14,39 +14,60 @@ class App extends Component {
     Score: 0,
     Highscore: 0,
     chosenImages: [],
-    gameStart:"choose an avenger!"
   };
 
   // clicking images
    chosenImage = id => {
     
     if (this.state.chosenImages.includes(id)) {
-      this.setState({gameMsg:""})
+      
       this.resetGame()
     }
-
-  else {
-    const score = this.state.currentScore + 1
+ 
+    else {
+   
+  const Score = this.state.Score + 1
 
     // highScore 
-    if (score > this.state.Highscore) {
-      this.setState({HighScore:score})
+    if (Score > this.state.Highscore) {
+      this.setState({HighScore:Score})
     }
-
-    
-    if (score === maxScore) {
-      this.setState({gameMsg: ""})
+    if (Score === maxScore) {
+      
       this.resetGame()
     }
     //  image id and shuffle
     else {
-      this.setState({gameMsg: ""})
-      this.setState({selected:this.state.selectedImages.push(id)})
-      this.setState({Score:score})
+     
+      this.setState({selected:this.state.chosenImages.push(id)})
+      this.setState({Score:Score})
       this.shuffleImages()
-    }
+    };
   }
 }
+
+// Re start game
+resetGame = () => {
+  this.setState({Score:0})
+  this.setState({chosenImages:[]})
+  this.shuffleImages()
+}
+//  shuffle
+shuffleImages = () => {
+  const shuffledImages = this.shuffleArray(avengers)
+  this.setState({avengers:shuffledImages})
+}
+
+// https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array (use this code as reference for shuffleling an)
+shuffleArray = (a) => {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+
 
 
   // Map  component for each object
@@ -56,13 +77,17 @@ class App extends Component {
       <Wrapper>
         
         <Title>Avengers Clicky game</Title>
-         <Navbar> </Navbar>
+         <Navbar> 
+           Score = {this.state.Score} <br />
+           HighScore = {this.state.HighScore}
+         </Navbar>
         {this.state.avengers.map(avenger => (
           <Avengercards
-            handleClick={this.handleClick}
+           // handleClick={this.handleClick}
             id={avenger.id}
             key={avenger.id}
             image={avenger.image}
+            chosenImage={this.chosenImage}
           />
         ))}
        

@@ -5,9 +5,10 @@ function Avengercards(props) {
   return (
     <div className="card">
       <div className="img-container">
-        <img alt={props.name} src={props.image} />
+        <img alt={props.name} src={props.image} 
+        onClick={() =>props.chosenImage(props.id)}></img>
       </div>
-      <span className="select" onClick={() => this.props.Handleclick(props.id)}></span>
+      
      
     </div>
   );
