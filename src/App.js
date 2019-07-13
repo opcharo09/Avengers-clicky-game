@@ -5,20 +5,51 @@ import Title from "./components/Title";
 import Navbar from "./components/Navbar";
 import avengers from "./avengers.json";
 
+const maxScore = avengers.length
+
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+  // array
   state = {
-    avengers
+    avengers,
+    Score: 0,
+    Highscore: 0,
+    chosenImages: [],
+    gameStart:"choose an avenger!"
   };
 
-  removeAvenger = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const avengers = this.state.avengers.filter(avenger => avenger.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ avengers });
-  };
+  // clicking images
+   chosenImage = id => {
+    
+    if (this.state.chosenImages.includes(id)) {
+      this.setState({gameMsg:""})
+      this.resetGame()
+    }
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
+  else {
+    const score = this.state.currentScore + 1
+
+    // highScore 
+    if (score > this.state.Highscore) {
+      this.setState({HighScore:score})
+    }
+
+    
+    if (score === maxScore) {
+      this.setState({gameMsg: ""})
+      this.resetGame()
+    }
+    //  image id and shuffle
+    else {
+      this.setState({gameMsg: ""})
+      this.setState({selected:this.state.selectedImages.push(id)})
+      this.setState({Score:score})
+      this.shuffleImages()
+    }
+  }
+}
+
+
+  // Map  component for each object
   render() {
     return (
       
