@@ -78,7 +78,7 @@ shuffleArray = (a) => {
         
         <Title>Avengers Clicky game</Title>
          <Navbar> 
-           Score = {this.state.Score} <br />
+           Score = {this.state.Score} 
            HighScore = {this.state.HighScore}
          </Navbar>
         {this.state.avengers.map(avenger => (
