@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+
 
 function Avengercards(props) {
   return (

@@ -1,100 +1,68 @@
 import React, { Component } from "react";
-import Avengercards from "./components/Avengercards";
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-import Navbar from "./components/Navbar";
-import avengers from "./avengers.json";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, Button } from 'reactstrap'
+import Avengers from "./Pages/Avengers";
+import LoudHouse from "./Pages/LoudHouse";
+import Soccer1 from "./Pages/Soccer1";
+import Title from "./components/Title"
 
-const maxScore = avengers.length
-
-class App extends Component {
-  // array
-  state = {
-    avengers,
-    Score: 0,
-    Highscore: 0,
-    chosenImages: [],
-  };
-
-  // clicking images
-   chosenImage = id => {
-    
-    if (this.state.chosenImages.includes(id)) {
-      
-      this.resetGame()
-    }
- 
-    else {
-   
-  const Score = this.state.Score + 1
-
-    // highScore 
-    if (Score > this.state.Highscore) {
-      this.setState({HighScore:Score})
-    }
-    if (Score === maxScore) {
-      
-      this.resetGame()
-    }
-    //  image id and shuffle
-    else {
-     
-      this.setState({selected:this.state.chosenImages.push(id)})
-      this.setState({Score:Score})
-      this.shuffleImages()
-    };
-  }
-}
-
-// Re start game
-resetGame = () => {
-  this.setState({Score:0})
-  this.setState({chosenImages:[]})
-  this.shuffleImages()
-}
-//  shuffle
-shuffleImages = () => {
-  const shuffledImages = this.shuffleArray(avengers)
-  this.setState({avengers:shuffledImages})
-}
-
-// https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array (use this code as reference for shuffleling an)
-shuffleArray = (a) => {
-  for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 
 
 
   // Map  component for each object
+  class App extends Component{
   render() {
     return (
       
-      <Wrapper>
-        
-        <Title>Avengers Clicky game</Title>
-         <Navbar> 
-           Score = {this.state.Score} 
-           HighScore = {this.state.HighScore}
-         </Navbar>
-        {this.state.avengers.map(avenger => (
-          <Avengercards
-           // handleClick={this.handleClick}
-            id={avenger.id}
-            key={avenger.id}
-            image={avenger.image}
-            chosenImage={this.chosenImage}
-          />
-        ))}
+       <Router>
+        <div>
+        <Title>Memory Game</Title>
+      
+      
+        <div>
+      <Card>
+        <CardImg top width="100%"  src={require("./Images/avengers-infinity-war.jpg")} alt=""></CardImg>
+        <CardBody>
+          <CardTitle>Avengers</CardTitle>
+          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+          <Button>Button</Button>
+        </CardBody>
+      </Card>
+    </div>
+
+      
+    <div>
+      <Card>
+        <CardImg top width="100%"  src={require("./Images/fauzan-saari-crn276hbbYU-unsplash")} alt=""></CardImg>
+        <CardBody>
+          <CardTitle>Avengers</CardTitle>
+          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+          <Button>Button</Button>
+        </CardBody>
+      </Card>
+    </div>
+    
        
-      </Wrapper>
+       
+        
+      
+       <Switch>
+         {/* <Route exact path="/" component={Home}/> */}
+         <Route exact path="/avengers" component={Avengers}/>
+         <Route exact path="/loudhouse" component={LoudHouse}/>
+          <Route   exact path="/soccer1" component={Soccer1} />
+       </Switch>
+       </div>
+       
+      </Router>
+    
      
     );
   }
 }
+
 
 export default App;
