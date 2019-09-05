@@ -2,7 +2,7 @@
   "name": "avengers-clicky-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://opcharo09.github.io/Avengers-clicky-game/",
+  "homepage": "http://opcharo09.github.io/memory-game/",
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
