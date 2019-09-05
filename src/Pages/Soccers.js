@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Avengercards from "../components/Avengercards";
+import SoccerCards from "../components/SoccerCards";
 import Wrapper from "../components/Wrapper";
 import Navbar from "../components/Navbar";
-import avengers from "../Cards/avenger"
+import soccers from "../Cards/soccer"
 
-const maxScore = avengers.length
+const maxScore = soccers.length
 
-class Avenger extends Component {
+class soccer extends Component {
   // array
   state = {
-    avengers,
+    soccers,
     Score: 0,
     Highscore: 0,
     chosenImages: [],
@@ -54,8 +54,8 @@ resetGame = () => {
 }
 //  shuffle
 shuffleImages = () => {
-  const shuffledImages = this.shuffleArray(avengers)
-  this.setState({avengers:shuffledImages})
+  const shuffledImages = this.shuffleArray(soccers)
+  this.setState({soccer1s:shuffledImages})
 }
 
 // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array (use this code as reference for shuffleling an)
@@ -88,17 +88,17 @@ render() {
            </div>
          </Navbar>
          <Wrapper>
-        {this.state.avengers.map(avenger => (
-          <Avengercards
+        {this.state.soccers.map(soccer => (
+          <SoccerCards
            // handleClick={this.handleClick}
-            id={avenger.id}
-            key={avenger.id}
-            image={avenger.image}
+            id={soccer.id}
+            key={soccer.id}
+            image={soccer.image}
             chosenImage={this.chosenImage}
           /> 
-          
+         
         ))}
-         </Wrapper>
+          </Wrapper>
          </div>
        
     
@@ -107,4 +107,4 @@ render() {
   }
 }
 
-export default Avenger;
+export default soccer;
