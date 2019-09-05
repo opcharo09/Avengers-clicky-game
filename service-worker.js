@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Avengers-clicky-game/precache-manifest.1341d6d5eb0b48cc0e749a23814f963f.js"
+  "/Avengers-clicky-game/precache-manifest.e26fc11ca882780ab012580027d361e0.js"
 );
 
 self.addEventListener('message', (event) => {

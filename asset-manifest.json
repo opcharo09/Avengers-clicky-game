@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/Avengers-clicky-game/static/css/main.65f79b0a.chunk.css",
-    "main.js": "/Avengers-clicky-game/static/js/main.29b0efda.chunk.js",
-    "main.js.map": "/Avengers-clicky-game/static/js/main.29b0efda.chunk.js.map",
+    "main.css": "/Avengers-clicky-game/static/css/main.2240b50b.chunk.css",
+    "main.js": "/Avengers-clicky-game/static/js/main.d3fbcd7d.chunk.js",
+    "main.js.map": "/Avengers-clicky-game/static/js/main.d3fbcd7d.chunk.js.map",
     "runtime~main.js": "/Avengers-clicky-game/static/js/runtime~main.5b50e82f.js",
     "runtime~main.js.map": "/Avengers-clicky-game/static/js/runtime~main.5b50e82f.js.map",
-    "static/js/2.884c28c3.chunk.js": "/Avengers-clicky-game/static/js/2.884c28c3.chunk.js",
-    "static/js/2.884c28c3.chunk.js.map": "/Avengers-clicky-game/static/js/2.884c28c3.chunk.js.map",
+    "static/js/2.d528c057.chunk.js": "/Avengers-clicky-game/static/js/2.d528c057.chunk.js",
+    "static/js/2.d528c057.chunk.js.map": "/Avengers-clicky-game/static/js/2.d528c057.chunk.js.map",
     "index.html": "/Avengers-clicky-game/index.html",
-    "precache-manifest.1341d6d5eb0b48cc0e749a23814f963f.js": "/Avengers-clicky-game/precache-manifest.1341d6d5eb0b48cc0e749a23814f963f.js",
+    "precache-manifest.e26fc11ca882780ab012580027d361e0.js": "/Avengers-clicky-game/precache-manifest.e26fc11ca882780ab012580027d361e0.js",
     "service-worker.js": "/Avengers-clicky-game/service-worker.js",
-    "static/css/main.65f79b0a.chunk.css.map": "/Avengers-clicky-game/static/css/main.65f79b0a.chunk.css.map"
+    "static/css/main.2240b50b.chunk.css.map": "/Avengers-clicky-game/static/css/main.2240b50b.chunk.css.map",
+    "static/media/avengers-infinity-war.jpg": "/Avengers-clicky-game/static/media/avengers-infinity-war.e843fd90.jpg",
+    "static/media/fauzan-saari-crn276hbbYU-unsplash.jpg": "/Avengers-clicky-game/static/media/fauzan-saari-crn276hbbYU-unsplash.9d8452ce.jpg",
+    "static/media/wp2066450-the-loud-house-wallpapers.jpg": "/Avengers-clicky-game/static/media/wp2066450-the-loud-house-wallpapers.68272df4.jpg"
   }
 }
